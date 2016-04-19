@@ -4,9 +4,10 @@ include("connect.php");
 
 
 
-$firstname = $_POST['firstname'];
-$lastname = $_POST['lastname'];
+echo $firstname = $_POST['firstname'] . "<br>";
+echo $lastname = $_POST['lastname'];
 
+/*
 if (empty($_POST['firstname'])||(empty($_POST['lastname']))){
     echo "Both fields are required";
 }
@@ -25,5 +26,5 @@ if (empty($_POST['firstname'])||(empty($_POST['lastname']))){
 
     }
 
-
+*/
 ?>
