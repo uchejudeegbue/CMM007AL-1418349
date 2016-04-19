@@ -13,7 +13,7 @@ if (empty($_POST['firstname'])||(empty($_POST['lastname']))){
         $sql = "INSERT INTO testing (firstname, lastname) VALUES ($fisrtname, $lastname)";
 
         if (mysqli_query($db,$sql)){
-            echo "Successful";
+            header ("location: display.php?firstname=$firstname&lastname=$lastname");
         }
         else {
             echo "Error: " . $sql . "<br>" . mysqli_error ($db);

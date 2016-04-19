@@ -1,7 +1,10 @@
+
+
+
+
 <?php
-/**
- * Created by PhpStorm.
- * User: 1418349
- * Date: 19/04/2016
- * Time: 15:52
- */
+$firstname=$_GET['firstname'];
+$lastname=$_GET['lastname'];
+
+echo "My name is {$firstname} {$lastname}";
+?>
