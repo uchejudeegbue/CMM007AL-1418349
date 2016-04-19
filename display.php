@@ -13,7 +13,7 @@ $result = mysqli_query($db, $sql_query);
 while ($row = $result->fetch_array()){
     $firstname = $row['firstname'];
     $lastname = $row['lastname'];
-    echo "{$firstname} {$lastname}" . "<br>";
+    echo "My name is {$firstname} {$lastname}" . "<br>";
 }
 
 
