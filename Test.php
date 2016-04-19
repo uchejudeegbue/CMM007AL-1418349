@@ -26,6 +26,3 @@
 
 </html>
 
-<?php
-include ("connect.php")
-?>
