@@ -2,13 +2,16 @@
 
 include("connect.php");
 
+
+
+$firstname = $_POST['firstname'];
+$lastname = $_POST['lastname'];
+
 if (empty($_POST['firstname'])||(empty($_POST['lastname']))){
     echo "Both fields are required";
 }
     else{
 
-        $firstname = $_POST['firstname'];
-        $lastname = $_POST['lastname'];
 
         $sql = "INSERT INTO testing (firstname, lastname) VALUES ($fisrtname, $lastname)";
 
