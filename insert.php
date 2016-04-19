@@ -8,13 +8,13 @@ $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
 
 
-if (empty($_POST['firstname'])||(empty($_POST['lastname']))){
+if (empty($firstname)||(empty($lastname))){
     echo "Both fields are required";
 }
     else{
 
 
-        $sql = "INSERT INTO testing ('firstname', 'lastname') VALUES ($fisrtname, $lastname)";
+        $sql = "INSERT INTO testing (firstname, lastname) VALUES ('$fisrtname', '$lastname')";
 
         if (mysqli_query($db,$sql)){
             header ("location: display.php?firstname=$firstname&lastname=$lastname");
