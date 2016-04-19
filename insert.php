@@ -14,7 +14,7 @@ if (empty($firstname)||(empty($lastname))){
     else{
 
 
-        $sql = "INSERT INTO testing (firstname, lastname) VALUES ('uche', '$lastname')";
+        $sql = "INSERT INTO testing (firstname, lastname) VALUES ('$firstname', '$lastname')";
 
         if (mysqli_query($db,$sql)){
             header ("location: display.php?firstname=$firstname&lastname=$lastname");
