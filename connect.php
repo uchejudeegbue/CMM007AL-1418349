@@ -7,8 +7,8 @@ define (DB_DATABASE, 'CMM007ALDB-1418349');
 
 $sql = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if ($sql->connect_error) {
+    die("Connection failed: " . $sql->connect_error);
 }
 echo "Connected successfully";
 ?>
