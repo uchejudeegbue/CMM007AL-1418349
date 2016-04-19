@@ -12,9 +12,11 @@
 
 <form action="insert.php" method="post">
 
-    <input type="text" name="firstname" placeholder="First Name">
-    <input type="text" name="lastname" placeholder="Last Name">
-    <input type="submit" value="submit>"
+    <input type="text" name="firstname" placeholder="First Name"><br>
+    <br>
+    <input type="text" name="lastname" placeholder="Last Name"><br>
+    <br>
+    <input type="submit" value="submit">
 
 </form>
 
