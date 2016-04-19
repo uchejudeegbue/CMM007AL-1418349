@@ -4,17 +4,17 @@ include("connect.php");
 
 
 
-echo $firstname = $_POST['firstname'] . "<br>";
-echo $lastname = $_POST['lastname'];
+$firstname = $_POST['firstname'];
+$lastname = $_POST['lastname'];
 
-/*
+
 if (empty($_POST['firstname'])||(empty($_POST['lastname']))){
     echo "Both fields are required";
 }
     else{
 
 
-        $sql = "INSERT INTO testing (firstname, lastname) VALUES ($fisrtname, $lastname)";
+        $sql = "INSERT INTO testing ('firstname', 'lastname') VALUES ($fisrtname, $lastname)";
 
         if (mysqli_query($db,$sql)){
             header ("location: display.php?firstname=$firstname&lastname=$lastname");
@@ -26,5 +26,5 @@ if (empty($_POST['firstname'])||(empty($_POST['lastname']))){
 
     }
 
-*/
+
 ?>
