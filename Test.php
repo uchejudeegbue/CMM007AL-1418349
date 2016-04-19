@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h1> This is a simple login form</h1>
+<h3> This is a simple login form</h3>
 
 <p>Please provide the following information</p>
 
