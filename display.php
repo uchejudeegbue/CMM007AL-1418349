@@ -11,11 +11,12 @@ $sql_query = "SELECT * FROM testing";
 $result = mysqli_query($db, $sql_query);
 
 while ($row = $result->fetch_array()){
-    $firstname += $row['firstname'];
-    $lastname += $row['lastname'];
+    $firstname = $row['firstname'];
+    $lastname = $row['lastname'];
+    echo "{$firstname} {$lastname}";
 }
 
 
 
-echo "{$firstname} {$lastname}";
+
 ?>
