@@ -13,7 +13,8 @@
 <form action="insert.php" method="post">
 
     <input type="text" name="firstname" placeholder="First Name">
-    <input type=" t"
+    <input type="text" name="lastname" placeholder="Last Name">
+    <input type="submit" value="submit>"
 
 </form>
 
