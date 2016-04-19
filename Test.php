@@ -27,5 +27,5 @@
 </html>
 
 <?php
-echo "This is a test page.";
+include ("connect.php")
 ?>
