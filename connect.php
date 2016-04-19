@@ -5,10 +5,10 @@ define (DB_USERNAME, 'b0b6f99eaa8095');
 define (DB_PASSWORD, 'b6c66275');
 define (DB_DATABASE, 'CMM007ALDB-1418349');
 
-$sql = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+$db = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
-if ($sql->connect_error) {
-    die("Connection failed: " . $sql->connect_error);
+if ($db->connect_error) {
+    die("Connection failed: " . $db->connect_error);
 }
 
 ?>
