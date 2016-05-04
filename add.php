@@ -48,7 +48,7 @@
             </label><br><br>
             <label>Category:</label>
             <label>
-                <select name="blogs" required>
+                <select name="category" required>
 
                     <option value="work">politics</option>
                     <option value="university">sport</option>
@@ -67,8 +67,24 @@
 
         </form>
             <?php
+        }elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            include('connect.php');
+            if (isset($_POST['entryTitle']) && isset($_POST['entrySummary']) && isset($_POST['category']) && isset($_POST['submitter'])) {
+                $entryTitle = $_POST['entryTitle'];
+                $entrySummary = $_POST['entrySummary'];
+                $category = $_POST['category'];
+                $submitter = $_POST ['submitter'];
+                $sql = "INSERT INTO blogview (entryTitle, entrySummary, category, submitter)
+                        VALUES ('$entryTitle', '$entrySummary', '$category', '$submitter')";
+                if ($push = mysqli_query($db, $sql)) {
+                    header("Location: blog.php");
+                } else {
+                    header("Location: index.php");
+                }
+            }
+        } else {
+            header("Location: index.php");
         }
-
 
 
         ?>
@@ -89,52 +105,3 @@
 </body>
 </html>
 
-        <?php
-        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-
-
-            ?>
-            <form action="<? $_SERVER["PHP_SELF"] ?>" method="post">
-                <label>Bug Name</label>
-                <label>
-                    <input type="text" name="bugname" required/>
-                </label><br><br>
-                <label>Bug Summary</label>
-                <label>
-                    <textarea row="5px" col="50px" required name="summary"></textarea>
-                </label><br><br>
-                <label>Bug Category</label>
-                <label>
-                    <select name="bugs" required>
-
-                        <option value="Android">Android</option>
-                        <option value="Windows">Windows</option>
-                        <option value="iOS">iOS</option>
-                    </select>
-
-                </label><br><br>
-
-                <label>
-                    <input type="submit" value="submit" required/>
-                </label>
-
-            </form>
-            <?php
-        } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            include('connect.php');
-            if (isset($_POST['bugname']) && isset($_POST['bugs']) && isset($_POST['summary'])) {
-                $bugname = $_POST['bugname'];
-                $bugs = $_POST['bugs'];
-                $summary = $_POST['summary'];
-                $sql = "INSERT INTO blogview (entryTitle, entrySummary, category, submitter)
-                        VALUES ('$bugname', '$summary', '$bugs')";
-                if ($push = mysqli_query($db, $sql)) {
-                    header("Location: blog.php");
-                } else {
-                    header("Location: index.php");
-                }
-            }
-        } else {
-            header("Location: index.php");
-        }
-        ?>
