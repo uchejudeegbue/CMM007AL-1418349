@@ -62,7 +62,7 @@
             </label><br><br>
 
             <label>
-                <input type="submit" value="submit" required/>
+                <input type="submit" value="submit" />
             </label>
 
         </form>
