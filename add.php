@@ -86,7 +86,6 @@
             header("Location: index.php");
         }
 
-
         ?>
 
     </div>
