@@ -44,7 +44,7 @@
             </label><br><br>
             <label>Entry Summary:</label>
             <label>
-                <textarea row="5px" col="50px" name="summary" required></textarea>
+                <textarea row="5px" col="50px" name="entrySummary" required></textarea>
             </label><br><br>
             <label>Category:</label>
             <label>
