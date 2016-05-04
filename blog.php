@@ -32,9 +32,16 @@
 <!--Start of main-->
 <main>
     <div class="article">
+        <?php
+        include ('connect.php');
+        if (isset($_GET['category'])&& $_GET['category'] == 'all'){
+
+        }
 
 
 
+
+        ?>
 
     </div>
 
@@ -63,15 +70,16 @@
         <?php
         include('connect.php');
         if(isset($_GET['category']) && $_GET['category'] == 'all'){
-            $sql = "SELECT bugName, bugSummary, bugCategory
-            FROM bugtracas ";
+            $sql = "SELECT entryTitle, entrySummary, category, submitter
+            FROM blogview ";
             $result = mysqli_query($db,$sql);
             echo "
             <table>
                 <tr>
-                    <th>bugName </th>
-                    <th>bugSummary</th>
-                    <th>bugCategory</th>
+                    <th>entryTitle </th>
+                    <th>entrySummary</th>
+                    <th>category</th>
+                     <th>submitter</th>
 
                 </tr> ";
 
@@ -79,24 +87,26 @@
 
                 while($row = mysqli_fetch_assoc($result)){
                     echo "<tr>
-                    <td>".$row['bugName']."</td>
-                    <td>".$row['bugSummary']."</td>
-                    <td>".$row['bugCategory']."</td>
+                    <td>".$row['entryTitle']."</td>
+                    <td>".$row['entrySummary']."</td>
+                    <td>".$row['category']."</td>
+                     <td>".$row['submitter']."</td>
 
                 </tr>";
                 }
             }
             echo "</table>";
-        }elseif(isset($_GET['category']) && $_GET['category'] == 'android'){
-            $sql = "SELECT bugName, bugSummary, bugCategory
-            FROM bugtracas WHERE bugCategory='Android'";
+        }elseif(isset($_GET['category']) && $_GET['category'] == 'work'){
+            $sql = "SELECT entryTitle, entrySummary, category, submitter
+            FROM blogview WHERE category='Work'";
             $result = mysqli_query($db,$sql);
             echo "
             <table>
                 <tr>
-                    <th>bugName </th>
-                    <th>bugSummary</th>
-                    <th>bugCategory</th>
+                    <th>entryTitle </th>
+                    <th>entrySummary</th>
+                    <th>category</th>
+                     <th>submitter</th>
 
                 </tr> ";
 
@@ -104,24 +114,26 @@
 
                 while($row = mysqli_fetch_assoc($result)){
                     echo "<tr>
-                    <td>".$row['bugName']."</td>
-                    <td>".$row['bugSummary']."</td>
-                    <td>".$row['bugCategory']."</td>
+                    <td>".$row['entryTitle']."</td>
+                    <td>".$row['entrySummary']."</td>
+                    <td>".$row['category']."</td>
+                     <td>".$row['submitter']."</td>
 
                 </tr>";
                 }
             }
             echo "</table>";
-        }elseif(isset($_GET['category']) && $_GET['category'] == 'iOS'){
-            $sql = "SELECT bugName, bugSummary, bugCategory
-            FROM bugtracas WHERE bugCategory='iOS'";
+        }elseif(isset($_GET['category']) && $_GET['category'] == 'university'){
+            $sql = "SELECT entryTitle, entrySummary, category, submitter
+            FROM blogview WHERE category='University'";
             $result = mysqli_query($db,$sql);
             echo "
             <table>
                 <tr>
-                    <th>bugName </th>
-                    <th>bugSummary</th>
-                    <th>bugCategory</th>
+                    <th>entryTitle </th>
+                    <th>entrySummary</th>
+                    <th>category</th>
+                     <th>submitter</th>
 
                 </tr> ";
 
@@ -129,24 +141,26 @@
 
                 while($row = mysqli_fetch_assoc($result)){
                     echo "<tr>
-                    <td>".$row['bugName']."</td>
-                    <td>".$row['bugSummary']."</td>
-                    <td>".$row['bugCategory']."</td>
+                    <td>".$row['entryTitle']."</td>
+                    <td>".$row['entrySummary']."</td>
+                    <td>".$row['category']."</td>
+                     <td>".$row['submitter']."</td>
 
                 </tr>";
                 }
             }
             echo "</table>";
-        }elseif(isset($_GET['category']) && $_GET['category'] == 'windows'){
-            $sql = "SELECT bugName, bugSummary, bugCategory
-            FROM bugtracas WHERE bugCategory='Windows'";
+        }elseif(isset($_GET['category']) && $_GET['category'] == 'family'){
+            $sql = "SELECT entryTitle, entrySummary, category, submitter
+            FROM blogview WHERE category='Family'";
             $result = mysqli_query($db,$sql);
             echo "
             <table>
                 <tr>
-                    <th>bugName </th>
-                    <th>bugSummary</th>
-                    <th>bugCategory</th>
+                    <th>entryTitle </th>
+                    <th>entrySummary</th>
+                    <th>category</th>
+                     <th>submitter</th>
 
                 </tr> ";
 
@@ -154,16 +168,16 @@
 
                 while($row = mysqli_fetch_assoc($result)){
                     echo "<tr>
-                    <td>".$row['bugName']."</td>
-                    <td>".$row['bugSummary']."</td>
-                    <td>".$row['bugCategory']."</td>
+                    <td>".$row['entryTitle']."</td>
+                    <td>".$row['entrySummary']."</td>
+                    <td>".$row['category']."</td>
+                     <td>".$row['submitter']."</td>
 
                 </tr>";
                 }
             }
             echo "</table>";
         }
-
 
 
 
