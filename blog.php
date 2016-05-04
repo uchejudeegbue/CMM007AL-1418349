@@ -33,41 +33,6 @@
 <main>
     <div class="article">
         <?php
-        include ('connect.php');
-        if (isset($_GET['category'])&& $_GET['category'] == 'all'){
-
-        }
-
-
-
-
-        ?>
-
-    </div>
-
-</main>
-<!--End of main-->
-
-
-<!--Start of footer-->
-<footer>
-    <p>Designed by [Uche Jude Egbue], [2016]</p>
-</footer>
-<!--End of footer-->
-
-
-</body>
-</html>
-
-
-
-<main>
-
-
-
-    <div class="article">
-
-        <?php
         include('connect.php');
         if(isset($_GET['category']) && $_GET['category'] == 'all'){
             $sql = "SELECT entryTitle, entrySummary, category, submitter
@@ -183,16 +148,19 @@
 
 
         ?>
-
-
     </div>
+
 </main>
-<!--end of main-->
+<!--End of main-->
+
 
 <!--Start of footer-->
 <footer>
-    Designed by [Uche Jude Egbue, 2016]
+    <p>Designed by [Uche Jude Egbue], [2016]</p>
 </footer>
-<!--end of footer-->
+<!--End of footer-->
+
+
 </body>
 </html>
+
