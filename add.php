@@ -32,7 +32,12 @@
 <!--Start of main-->
 <main>
     <div class="article">
-        <form>
+        <?php
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+
+        ?>
+
+        <form action="<? $_SERVER["PHP_SELF"] ?>" method="post">
             <label>Entry Title:</label>
             <label>
                 <input type="text" name="entryTitle" required/>
@@ -43,7 +48,7 @@
             </label><br><br>
             <label>Category:</label>
             <label>
-                <select name="Bugs" required>
+                <select name="blogs" required>
 
                     <option value="work">politics</option>
                     <option value="university">sport</option>
@@ -53,7 +58,7 @@
             </label><br><br>
             <label>Submitted By:</label>
             <label>
-                <input type="text" name="submittedby" required/>
+                <input type="text" name="submitter"/>
             </label><br><br>
 
             <label>
@@ -61,6 +66,13 @@
             </label>
 
         </form>
+            <?php
+        }
+
+
+
+        ?>
+
     </div>
 
 </main>
@@ -76,3 +88,53 @@
 
 </body>
 </html>
+
+        <?php
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+
+
+            ?>
+            <form action="<? $_SERVER["PHP_SELF"] ?>" method="post">
+                <label>Bug Name</label>
+                <label>
+                    <input type="text" name="bugname" required/>
+                </label><br><br>
+                <label>Bug Summary</label>
+                <label>
+                    <textarea row="5px" col="50px" required name="summary"></textarea>
+                </label><br><br>
+                <label>Bug Category</label>
+                <label>
+                    <select name="bugs" required>
+
+                        <option value="Android">Android</option>
+                        <option value="Windows">Windows</option>
+                        <option value="iOS">iOS</option>
+                    </select>
+
+                </label><br><br>
+
+                <label>
+                    <input type="submit" value="submit" required/>
+                </label>
+
+            </form>
+            <?php
+        } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            include('connect.php');
+            if (isset($_POST['bugname']) && isset($_POST['bugs']) && isset($_POST['summary'])) {
+                $bugname = $_POST['bugname'];
+                $bugs = $_POST['bugs'];
+                $summary = $_POST['summary'];
+                $sql = "INSERT INTO blogview (entryTitle, entrySummary, category, submitter)
+                        VALUES ('$bugname', '$summary', '$bugs')";
+                if ($push = mysqli_query($db, $sql)) {
+                    header("Location: blog.php");
+                } else {
+                    header("Location: index.php");
+                }
+            }
+        } else {
+            header("Location: index.php");
+        }
+        ?>
