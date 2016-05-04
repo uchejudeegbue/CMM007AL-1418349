@@ -29,9 +29,12 @@ body{
     height: auto;
 }
 header{
-    height:200px;
+    height:100px;
     background-color: aqua;
     margin-bottom:2px;
+    padding-left:10px;
+
+    padding-top:10px;
 }
 .header{
     padding-left:10px;
@@ -65,16 +68,21 @@ footer{
 
 li{
     list-style:none;
-    padding:5px;
+    padding:20px;
+    display: inline;
+
 }
 
 li a{
     text-decoration: none;
     color:blue;
-}
+
+ }
 li a:hover{
     color: red;
 }
 nav ul{
     float:left;
+    margin: 10px;
+    background-color: azure;
 }
